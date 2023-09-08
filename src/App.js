@@ -1,25 +1,15 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Form from './react-component/Form';
+import TrainingSessions from './react-component/TrainingSessions';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [steps, setSteps] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Form steps={steps} setSteps={setSteps} />
+      <TrainingSessions steps={steps} setSteps={setSteps} />
     </div>
   );
 }
-
-export default App;
